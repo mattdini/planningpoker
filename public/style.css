@@ -1,0 +1,46 @@
+
+body{
+    background-image: url("geometry2.png")
+}
+
+
+.card-container{
+    display: flex;
+}
+.container{
+    width: 100%;
+}
+.fixed{
+    width: 200px;
+}
+.flex-item{
+    flex-grow: 1;
+}
+.center-text { text-align: center }
+
+.card {
+    background-color:white;
+    position:relative;
+}
+
+.btn-large{
+    background-color: white;
+}
+
+.animated-emoji {
+    position:absolute;
+    top:20px;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9999;
+    font-size: 4em;
+}
+
+.emoji-button-group {
+    padding-top: 5px;
+}
+
+.clear-button-group {
+    padding-top: 100px;
+}

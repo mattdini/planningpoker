@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planning Poker</title>
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="row">
+        <div class="col-1 col">
+            <div class="inbox">
+                <div class="inbox__people">
+                    <h4>Hello...</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-8 col">
+
+            <div class="row flex-spaces table"></div>
+
+            <form class="message_form">
+                <button class="btn-large" name="1" type="submit" value="1">1</button>
+                <button class="btn-large" name="2" type="submit" value="2">2</button>
+                <button class="btn-large" name="3" type="submit" value="3">3</button>
+                <button class="btn-large" name="5" type="submit" value="5">5</button>
+                <button class="btn-large" name="8" type="submit" value="8">8</button>
+                <div class="emoji-button-group">
+                    <button class="btn-med" name="thinking" type="submit" value="ec-thinking"><span
+                            class='ec ec-thinking'></span></button>
+                    <button class="btn-med" name="plusone" type="submit" value="ec-plus1"><span
+                            class='ec ec-plus1'></span></button>
+                    <button class="btn-med" name="clap" type="submit" value="ec-clap"><span
+                            class='ec ec-clap'></span></button>
+                </div>
+            </form>
+
+
+            <input class="modal-state" id="modal-2" type="checkbox">
+            <div class="modal">
+                <label class="modal-bg" for="modal-2"></label>
+                <div class="modal-body">
+                    <form class="name_form">
+                        <h4 class="modal-title">Hello! <span class='ec ec-wave'></h4>
+                        <p class="modal-text">This is a <a href="https://en.wikipedia.org/wiki/Planning_poker">planning
+                                poker</a> app meant to be used by teams over video chat. </p>
+                        <p class="modal-text">Everyone who joins will have a card and can click the numbered buttons to
+                            assign
+                            their card a value. </p>
+                        <p class="modal-text">Once done discussing a ticket, everyone can click their point prediction
+                            and
+                            everyone else will see it.</p>
+                        <input type="text" placeholder="Your Name" id="name" required> <BR>
+                        <button class="btn-small btn-success" name="name" type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 flex-right col">
+            <div class="clear-button-group">
+                <form class="clear_form">
+                    <button class="btn-med" popover-bottom="Clear Board" name="clear" type="submit" value="clear"><span
+                            class='ec ec-bomb'></span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
