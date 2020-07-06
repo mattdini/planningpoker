@@ -1,8 +1,7 @@
 
 body{
-    background-image: url("geometry2.png")
+    background-image: url("geometry.png")
 }
-
 
 .card-container{
     display: flex;

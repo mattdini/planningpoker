@@ -129,7 +129,7 @@ newUserConnected();
 messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    socket.emit("chat message", {
+    socket.emit("message bus", {
         message: e.submitter.value,
         nick: userName,
     });
@@ -192,7 +192,7 @@ socket.on("user disconnected", function (userName) {
     document.querySelector(`.${userName}-card`).remove();
 });
 
-socket.on("chat message", function (data) {
+socket.on("message bus", function (data) {
     addNewMessage({ user: data.nick, message: data.message });
 });
 

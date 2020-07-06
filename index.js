@@ -1,7 +1,6 @@
 const express = require("express");
 const socket = require("socket.io");
 
-// App setup
 const PORT = process.env.PORT || 5000;
 const app = express();
 const server = app.listen(PORT, function () {
@@ -9,10 +8,7 @@ const server = app.listen(PORT, function () {
     console.log(`http://localhost:${PORT}`);
 });
 
-// Static files
 app.use(express.static("public"));
-
-// Socket setup
 const io = socket(server);
 
 const activeUsers = new Set();
@@ -31,15 +27,12 @@ io.on("connection", function (socket) {
         io.emit("user disconnected", socket.userId);
     });
 
-    socket.on("chat message", function (data) {
-        io.emit("chat message", data);
+    socket.on("message bus", function (data) {
+        io.emit("message bus", data);
     });
 
     socket.on("clear", function (data) {
         io.emit("clear all", data);
     });
 
-    socket.on("typing", function (data) {
-        socket.broadcast.emit("typing", data);
-    });
 });
