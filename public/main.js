@@ -44,7 +44,7 @@ const addUserCard = (name) => {
                 <div class="card animate__animated animate__flipInX" style="width: 10rem;">
                     <div class="card-header">${name}</div>
                     <div class="card-body">
-                        <h1 class="card-title center-text ${cardScoreName}">--</h1>
+                        <h1 class="card-title center-text ${cardScoreName} scorecard">--</h1>
                         <span class="${cardEmote} center-text">&nbsp;</span>
                     </div>
                 </div>
@@ -107,6 +107,31 @@ const emote = ({ user, message }) => {
 
 };
 
+const confettiCheck = () => {
+
+    const allScores = document.querySelectorAll(".scorecard");
+    let justScores = [];
+
+    for (let key in allScores) {
+        if (allScores.hasOwnProperty(key)) {
+            justScores.push(allScores[key].innerHTML);
+        }
+    }
+
+    console.log(justScores);
+
+    if (justScores.includes("--")) {
+        return;
+    }
+
+    if (justScores.every((val, i, arr) => val === arr[0])) {
+        initConfetti();
+        render();
+    }
+
+
+};
+
 const addNewMessage = ({ user, message }) => {
     if (message.includes('ec-')) {
         emote({ user: user, message: message });
@@ -118,6 +143,8 @@ const addNewMessage = ({ user, message }) => {
 
     const myCardScore = document.querySelector("." + cardScore);
     myCardScore.innerHTML = message;
+
+    confettiCheck();
 
     animateCSS("." + cardName, 'bounce');
 

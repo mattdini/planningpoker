@@ -43,3 +43,7 @@ body{
 .clear-button-group {
     padding-top: 100px;
 }
+canvas { 
+    position: absolute;
+    z-index: -9999;
+}
