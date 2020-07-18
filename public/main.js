@@ -118,7 +118,9 @@ const confettiCheck = () => {
         }
     }
 
-    console.log(justScores);
+    if (justScores.length < 2) {
+        return;
+    }
 
     if (justScores.includes("--")) {
         return;
