@@ -65,10 +65,21 @@
                         <p class="modal-text">Once done discussing a ticket, everyone can click their point prediction
                             and
                             everyone else will see it.</p>
-                        <input type="text" placeholder="Your Name" id="name" required> <BR>
-                        <button class="btn-small btn-success" name="name" type="submit">Join</button>
+                        <!-- <input type="text" placeholder="Your Name" id="name" required> <BR> -->
+                        <!-- <button class="btn-small btn-success" name="name" type="submit">Join</button> -->
+                        <button class="btn-small btn-success" id="btn-login" disabled="true" onclick="login()">Log
+                            in</button>
+                        <button class="btn-small btn-success" id="btn-logout" disabled="true" onclick="logout()">Log
+                            out</button>
+                        </button>
+
                     </form>
+                    <p class="modal-text"></p>
+                    <div class="background-secondary">New! Trying out social auth - too lazy to keep typing
+                        my name!</div>
+                    </p>
                 </div>
+
             </div>
         </div>
         <div class="col-1 flex-right col">
@@ -82,6 +93,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.9/auth0-spa-js.production.js"></script>
     <script src="confetti.js"></script>
     <script src="main.js"></script>
 
