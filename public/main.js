@@ -179,6 +179,16 @@ const emote = ({ user, message }) => {
 
 };
 
+const timebox = ({ user, message }) => {
+    const cardName = user + "-card";
+    const cardScore = "." + user + "-card-score";
+
+    document.querySelector(cardScore).classList.add("timebox-on");
+
+    animateCSS("." + cardName, 'headShake');
+
+};
+
 const confettiCheck = () => {
 
     const allScores = document.querySelectorAll(".scorecard");
@@ -212,6 +222,17 @@ const addNewMessage = ({ user, message }) => {
         return;
     }
 
+    if (message.includes('timebox-on')) {
+        timebox({ user: user, message: message });
+        return;
+    }
+
+    if (message.includes('timebox-off')) {
+        const cardScore = "." + user + "-card-score";
+        document.querySelector(cardScore).classList.remove("timebox-on");
+        return;
+    }
+
     const cardName = user + "-card";
     const cardScore = user + "-card-score";
 
@@ -237,6 +258,22 @@ messageForm.addEventListener("submit", (e) => {
 
 });
 
+var checkbox = document.querySelector("input[name=timebox]");
+
+checkbox.addEventListener('change', function () {
+    if (this.checked) {
+        socket.emit("message bus", {
+            message: 'timebox-on',
+            nick: userName,
+        });
+    } else {
+        socket.emit("message bus", {
+            message: 'timebox-off',
+            nick: userName,
+        });
+    }
+});
+
 clearForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -252,6 +289,11 @@ const clearAll = ({ user, message }) => {
     for (const card of allCards) {
         const parentCard = card.parentElement.parentElement.parentElement.classList[0];
         animateCSS("." + parentCard, 'wobble');
+
+        const cardScore = "." + user + "-card-score";
+        document.querySelector(cardScore).classList.remove("timebox-on");
+        document.getElementById("timebox").checked = false;
+
         console.log(card);
         card.innerHTML = '--';
     }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planning Poker</title>
-    <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.7.0/dist/paper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
     <!-- https://ionicabizau.github.io/emoji.css/ -->
@@ -31,24 +31,48 @@
             <div class="row flex-spaces table"></div>
 
             <form class="message_form">
-                <button class="btn-large" name="1" type="submit" value="1">1</button>
-                <button class="btn-large" name="2" type="submit" value="2">2</button>
-                <button class="btn-large" name="3" type="submit" value="3">3</button>
-                <button class="btn-large" name="5" type="submit" value="5">5</button>
-                <button class="btn-large" name="8" type="submit" value="8">8</button>
-                <div class="emoji-button-group">
-                    <button class="btn-med" name="thinking" type="submit" value="ec-thinking"><span
-                            class='ec ec-thinking'></span></button>
-                    <button class="btn-med" name="plusone" type="submit" value="ec-plus1"><span
-                            class='ec ec-plus1'></span></button>
-                    <button class="btn-med" name="clap" type="submit" value="ec-clap"><span
-                            class='ec ec-clap'></span></button>
-                    <button class="btn-med" name="sunglasses" type="submit" value="ec-sunglasses"><span
-                            class='ec ec-sunglasses'></span></button>
-                    <button class="btn-med" name="seenoevil" type="submit" value="ec-see-no-evil"><span
-                            class='ec ec-see-no-evil'></span></button>
+                <div class="input-group">
+                    <div><label for="points">Points</label></div>
+                    <button class="btn-large" name="1" type="submit" value="1">1</button>
+                    <button class="btn-large" name="2" type="submit" value="2">2</button>
+                    <button class="btn-large" name="3" type="submit" value="3">3</button>
+                    <button class="btn-large" name="5" type="submit" value="5">5</button>
+                    <button class="btn-large" name="8" type="submit" value="8">8</button>
+                </div>
+
+                <div class="form-group input-group">
+                    <div> <label for="modifiers">Modifiers</label></div>
+                    <label for="timebox" class="paper-switch-tile">
+                        <input id="timebox" name="timebox" type="checkbox" />
+                        <div class="paper-switch-tile-card border">
+
+                            <div class="paper-switch-tile-card-front border"><span class='ec ec-alarm-clock'></span>
+                            </div>
+                            <div class="paper-switch-tile-card-back border background-success"><span
+                                    class='ec ec-alarm-clock'></span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <BR>
+                <div class="input-group">
+                    <div><label for="reactions">Reactions</label></div>
+                    <div class="emoji-button-group">
+                        <button class="btn-med" name="thinking" type="submit" value="ec-thinking"><span
+                                class='ec ec-thinking'></span></button>
+                        <button class="btn-med" name="plusone" type="submit" value="ec-plus1"><span
+                                class='ec ec-plus1'></span></button>
+                        <button class="btn-med" name="clap" type="submit" value="ec-clap"><span
+                                class='ec ec-clap'></span></button>
+                        <button class="btn-med" name="sunglasses" type="submit" value="ec-sunglasses"><span
+                                class='ec ec-sunglasses'></span></button>
+                        <button class="btn-med" name="seenoevil" type="submit" value="ec-see-no-evil"><span
+                                class='ec ec-see-no-evil'></span></button>
+                    </div>
                 </div>
             </form>
+
+
 
 
             <input class="modal-state" id="modal-2" type="checkbox">

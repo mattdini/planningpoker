@@ -47,3 +47,12 @@ canvas {
     position: absolute;
     z-index: -9999;
 }
+
+.input-group {
+    padding-bottom: 30px;
+    min-height: 100px;
+}
+
+.timebox-on{
+    background: url(clock_512.png) no-repeat center/contain;
+}
