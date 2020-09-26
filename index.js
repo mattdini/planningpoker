@@ -11,6 +11,10 @@ const server = app.listen(PORT, function () {
 app.use(express.static("public"));
 const io = socket(server);
 
+// turn off http long polling - force web sockets
+// sorry IE9 :(
+io.set('transports', ['websocket']);
+
 const activeUsers = new Set();
 
 

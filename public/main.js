@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io({ transports: ['websocket'] });
 
 const inboxPeople = document.querySelector(".inbox__people");
 const messageForm = document.querySelector(".message_form");
