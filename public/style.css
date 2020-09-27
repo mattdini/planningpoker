@@ -56,3 +56,24 @@ canvas {
 .timebox-on{
     background: url(clock_512.png) no-repeat center/contain;
 }
+
+@font-face {
+font-family: 'Kismet NF Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Kismet NF Regular'), url('KismetNF.woff') format('woff');
+}
+
+
+#logo {
+    font-family:'Kismet NF Regular';
+    font-weight:normal;
+    font-size:90px;
+    text-align:center;
+}
+
+#logo img {
+    display:block;
+    margin:auto;
+     border:none;
+}

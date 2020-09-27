@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planning Poker</title>
+    <title>Planning Poker Guru</title>
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.7.0/dist/paper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
@@ -80,7 +80,8 @@
                 <label class="modal-bg" for="modal-2"></label>
                 <div class="modal-body">
                     <form class="name_form">
-                        <h4 class="modal-title">Hello! <span class='ec ec-wave'></h4>
+                        <div id="logo"><img src="logo.png" border="0">PlanningPoker.guru</div>
+                        <h4 class="modal-title">Hello!</h4>
                         <p class="modal-text">This is a <a href="https://en.wikipedia.org/wiki/Planning_poker">planning
                                 poker</a> app meant to be used by teams over video chat. </p>
                         <p class="modal-text">Everyone who joins will have a card and can click the numbered buttons to
@@ -92,16 +93,13 @@
                         <!-- <input type="text" placeholder="Your Name" id="name" required> <BR> -->
                         <!-- <button class="btn-small btn-success" name="name" type="submit">Join</button> -->
                         <button class="btn-small btn-success" id="btn-login" disabled="true" onclick="login()">Log
-                            in</button>
+                            in With Google</button>
                         <button class="btn-small btn-success" id="btn-logout" disabled="true" onclick="logout()">Log
                             out</button>
                         </button>
 
                     </form>
                     <p class="modal-text"></p>
-                    <div class="background-secondary">New! Trying out social auth - too lazy to keep typing
-                        my name!</div>
-                    </p>
                 </div>
 
             </div>
