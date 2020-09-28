@@ -8,6 +8,14 @@ const server = app.listen(PORT, function () {
     console.log(`http://localhost:${PORT}`);
 });
 
+app.use(function (req, res, next) {
+    if (req.headers['x-forwarded-proto'] !== 'https' && req.hostname !== 'localhost') {
+        const secureUrl = 'https://www.' + req.hostname + req.originalUrl
+        res.redirect(302, secureUrl)
+    }
+    next()
+})
+
 app.use(express.static("public"));
 const io = socket(server);
 
